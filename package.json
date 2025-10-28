@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test:e2e": "npm run db:reset:test && playwright test",
+    "test:e2e": "playwright test",
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
     "db:reset:test": "psql \"postgres://user:pass@host:5432/mi_app_test\" -f scripts/reset-db.sql"
