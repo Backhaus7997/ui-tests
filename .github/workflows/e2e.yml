@@ -9,12 +9,15 @@ jobs:
         with:
           node-version: '20'
       - run: npm ci || npm install
-      - run: npx playwright install
-      - name: Create .env (optional)
+      - run: npx playwright install --with-deps
+      - name: Create .env (from Secrets)
         run: |
           echo "BASE_URL=${{ secrets.BASE_URL }}" >> .env
           echo "ADMIN_EMAIL=${{ secrets.ADMIN_EMAIL }}" >> .env
           echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> .env
+      - name: Show env keys present (masked)
+        run: |
+          grep -E 'BASE_URL|ADMIN_EMAIL|ADMIN_PASSWORD' .env | sed 's/=.*/=<set>/'
       - run: npm run test:e2e
       - uses: actions/upload-artifact@v4
         with:
