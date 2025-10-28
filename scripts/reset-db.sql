@@ -1,0 +1,3 @@
+-- Ejemplo: vaciar tablas de tu esquema de testing. Ajustá nombres reales.
+-- TRUNCATE TABLE public.usuarios RESTART IDENTITY CASCADE;
+-- TRUNCATE TABLE public.ordenes  RESTART IDENTITY CASCADE;

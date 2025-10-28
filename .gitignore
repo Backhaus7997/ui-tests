@@ -1,0 +1,6 @@
+node_modules
+.env
+storageState.json
+playwright-report
+test-results
+.DS_Store
