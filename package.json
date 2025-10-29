@@ -6,7 +6,8 @@
     "test:e2e": "playwright test",
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
-    "db:reset:test": "psql \"postgres://user:pass@host:5432/mi_app_test\" -f scripts/reset-db.sql"
+    "db:reset:test": "psql \"postgres://user:pass@host:5432/mi_app_test\" -f scripts/reset-db.sql",
+    "demo": "PWDEBUG=1 playwright test --ui tests/login-demo.spec.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
